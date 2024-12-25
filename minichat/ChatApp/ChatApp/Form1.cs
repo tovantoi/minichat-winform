@@ -83,9 +83,22 @@ namespace ChatApp
         {
             if (_stream != null && !string.IsNullOrWhiteSpace(message))
             {
-                byte[] buffer = Encoding.UTF8.GetBytes(message);
-                _stream.Write(buffer, 0, buffer.Length);
-                txtMessage.Clear();
+                try
+                {
+                    // Hiển thị tin nhắn của mình trước khi gửi
+                    rtbChat.AppendText($"Me: {message}{Environment.NewLine}");
+                    rtbChat.ScrollToCaret();
+
+                    // Gửi tin nhắn đến server
+                    byte[] buffer = Encoding.UTF8.GetBytes(message);
+                    _stream.Write(buffer, 0, buffer.Length);
+
+                    txtMessage.Clear();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Lỗi khi gửi tin nhắn: {ex.Message}");
+                }
             }
         }
         private void Disconnect()
@@ -97,8 +110,24 @@ namespace ChatApp
 
         private void btnSend_Click(object sender, EventArgs e)
         {
-            string message = txtMessage.Text;
-            SendMessage(message);
+            string groupName = txtGroupName.Text; // Tên nhóm
+            string message = txtMessage.Text; // Tin nhắn
+
+            if (!string.IsNullOrWhiteSpace(groupName) && !string.IsNullOrWhiteSpace(message))
+            {
+                // Kiểm tra xem người dùng có nhập tên nhóm không
+                SendMessage($"/group-msg {groupName} {message}"); // Gửi tin nhắn nhóm
+            }
+            else if (!string.IsNullOrWhiteSpace(message))
+            {
+                // Nếu không có nhóm nhưng có tin nhắn, gửi tin nhắn cá nhân
+                SendMessage(message); // Gửi tin nhắn cá nhân
+            }
+            else
+            {
+                // Nếu không có tin nhắn hoặc nhóm, thông báo lỗi hoặc yêu cầu nhập lại
+                MessageBox.Show("Please enter a message or select a group to send to.");
+            }
         }
 
         private void btnPrivateMessage_Click(object sender, EventArgs e)
@@ -128,5 +157,26 @@ namespace ChatApp
             // Chuyển đổi trạng thái
             isPasswordVisible = !isPasswordVisible;
         }
-    }  
+
+        private void btnCreateGroup_Click(object sender, EventArgs e)
+        {
+            string groupName = txtGroupName.Text;
+
+            if (!string.IsNullOrWhiteSpace(groupName))
+            {
+                SendMessage($"/create-group {groupName}");
+            }
+        }
+
+        private void btnAddToGroup_Click(object sender, EventArgs e)
+        {
+            string groupName = txtGroupName.Text;
+            string userToAdd = txtRecipient.Text;
+
+            if (!string.IsNullOrWhiteSpace(groupName) && !string.IsNullOrWhiteSpace(userToAdd))
+            {
+                SendMessage($"/add-to-group {groupName} {userToAdd}");
+            }
+        }
+    }
 }

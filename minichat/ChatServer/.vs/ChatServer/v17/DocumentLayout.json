@@ -1,17 +1,17 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\minichat\\ChatServer\\",
+  "WorkspaceRootPath": "D:\\Mini_Chat\\minichat-winform\\minichat\\ChatServer\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{349983C8-0EC5-4FC6-BFD2-FF07A2F543C3}|ChatServer\\ChatServer.csproj|d:\\minichat\\chatserver\\chatserver\\chatserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{349983C8-0EC5-4FC6-BFD2-FF07A2F543C3}|ChatServer\\ChatServer.csproj|d:\\mini_chat\\minichat-winform\\minichat\\chatserver\\chatserver\\chatserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{349983C8-0EC5-4FC6-BFD2-FF07A2F543C3}|ChatServer\\ChatServer.csproj|solutionrelative:chatserver\\chatserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{349983C8-0EC5-4FC6-BFD2-FF07A2F543C3}|ChatServer\\ChatServer.csproj|D:\\minichat\\ChatServer\\chatserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{349983C8-0EC5-4FC6-BFD2-FF07A2F543C3}|ChatServer\\ChatServer.csproj|D:\\Mini_Chat\\minichat-winform\\minichat\\ChatServer\\chatserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{349983C8-0EC5-4FC6-BFD2-FF07A2F543C3}|ChatServer\\ChatServer.csproj|solutionrelative:chatserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{349983C8-0EC5-4FC6-BFD2-FF07A2F543C3}|ChatServer\\ChatServer.csproj|D:\\minichat\\ChatServer\\chatserver\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{349983C8-0EC5-4FC6-BFD2-FF07A2F543C3}|ChatServer\\ChatServer.csproj|D:\\Mini_Chat\\minichat-winform\\minichat\\ChatServer\\chatserver\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{349983C8-0EC5-4FC6-BFD2-FF07A2F543C3}|ChatServer\\ChatServer.csproj|solutionrelative:chatserver\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -36,11 +36,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "ChatServer.cs",
-              "DocumentMoniker": "D:\\minichat\\ChatServer\\ChatServer\\ChatServer.cs",
+              "DocumentMoniker": "D:\\Mini_Chat\\minichat-winform\\minichat\\ChatServer\\ChatServer\\ChatServer.cs",
               "RelativeDocumentMoniker": "ChatServer\\ChatServer.cs",
-              "ToolTip": "D:\\minichat\\ChatServer\\ChatServer\\ChatServer.cs",
+              "ToolTip": "D:\\Mini_Chat\\minichat-winform\\minichat\\ChatServer\\ChatServer\\ChatServer.cs",
               "RelativeToolTip": "ChatServer\\ChatServer.cs",
-              "ViewState": "AQIAACwAAAAAAAAAAAAhwEAAAAAMAAAA",
+              "ViewState": "AQIAACoAAAAAAAAAAAAhwD4AAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-31T06:57:39.667Z",
               "EditorCaption": ""
@@ -49,9 +49,9 @@
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "User.cs",
-              "DocumentMoniker": "D:\\minichat\\ChatServer\\ChatServer\\User.cs",
+              "DocumentMoniker": "D:\\Mini_Chat\\minichat-winform\\minichat\\ChatServer\\ChatServer\\User.cs",
               "RelativeDocumentMoniker": "ChatServer\\User.cs",
-              "ToolTip": "D:\\minichat\\ChatServer\\ChatServer\\User.cs",
+              "ToolTip": "D:\\Mini_Chat\\minichat-winform\\minichat\\ChatServer\\ChatServer\\User.cs",
               "RelativeToolTip": "ChatServer\\User.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAuwAsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -61,9 +61,9 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Program.cs",
-              "DocumentMoniker": "D:\\minichat\\ChatServer\\ChatServer\\Program.cs",
+              "DocumentMoniker": "D:\\Mini_Chat\\minichat-winform\\minichat\\ChatServer\\ChatServer\\Program.cs",
               "RelativeDocumentMoniker": "ChatServer\\Program.cs",
-              "ToolTip": "D:\\minichat\\ChatServer\\ChatServer\\Program.cs",
+              "ToolTip": "D:\\Mini_Chat\\minichat-winform\\minichat\\ChatServer\\ChatServer\\Program.cs",
               "RelativeToolTip": "ChatServer\\Program.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAuwAgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

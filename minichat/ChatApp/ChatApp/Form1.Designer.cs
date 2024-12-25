@@ -45,6 +45,9 @@
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
             button1 = new Button();
+            btnAddToGroup = new Button();
+            btnCreateGroup = new Button();
+            txtGroupName = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
@@ -76,14 +79,14 @@
             txtMessage.Location = new Point(250, 280);
             txtMessage.Margin = new Padding(4);
             txtMessage.Name = "txtMessage";
-            txtMessage.PlaceholderText = "Tin nhắn nhóm...";
+            txtMessage.PlaceholderText = "Nhập tin nhắn....";
             txtMessage.Size = new Size(294, 30);
             txtMessage.TabIndex = 2;
             // 
             // lblUsername
             // 
             lblUsername.AutoSize = true;
-            lblUsername.BackColor = Color.FromArgb(192, 255, 192);
+            lblUsername.BackColor = Color.FromArgb(128, 255, 128);
             lblUsername.BorderStyle = BorderStyle.Fixed3D;
             lblUsername.ImageAlign = ContentAlignment.MiddleLeft;
             lblUsername.Location = new Point(48, 137);
@@ -100,20 +103,20 @@
             lblRecipient.BackColor = Color.FromArgb(255, 192, 255);
             lblRecipient.BorderStyle = BorderStyle.FixedSingle;
             lblRecipient.ForeColor = Color.Blue;
-            lblRecipient.Location = new Point(26, 350);
+            lblRecipient.Location = new Point(112, 344);
             lblRecipient.Margin = new Padding(4, 0, 4, 0);
             lblRecipient.Name = "lblRecipient";
-            lblRecipient.Size = new Size(196, 25);
+            lblRecipient.Size = new Size(91, 25);
             lblRecipient.TabIndex = 4;
-            lblRecipient.Text = "Nhập tin nhắn riêng tư";
+            lblRecipient.Text = "Username";
             lblRecipient.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblPassword
             // 
             lblPassword.AutoSize = true;
-            lblPassword.BackColor = Color.FromArgb(192, 255, 192);
+            lblPassword.BackColor = Color.FromArgb(128, 255, 128);
             lblPassword.BorderStyle = BorderStyle.Fixed3D;
-            lblPassword.Location = new Point(52, 185);
+            lblPassword.Location = new Point(48, 188);
             lblPassword.Margin = new Padding(4, 0, 4, 0);
             lblPassword.Name = "lblPassword";
             lblPassword.Size = new Size(87, 25);
@@ -126,12 +129,12 @@
             rtbChat.BackColor = Color.FromArgb(192, 255, 255);
             rtbChat.Cursor = Cursors.No;
             rtbChat.ForeColor = Color.FromArgb(0, 0, 192);
-            rtbChat.Location = new Point(596, 141);
+            rtbChat.Location = new Point(597, 102);
             rtbChat.Margin = new Padding(4);
             rtbChat.Name = "rtbChat";
             rtbChat.ReadOnly = true;
             rtbChat.ScrollBars = RichTextBoxScrollBars.Vertical;
-            rtbChat.Size = new Size(356, 294);
+            rtbChat.Size = new Size(390, 273);
             rtbChat.TabIndex = 6;
             rtbChat.Text = "";
             // 
@@ -142,7 +145,7 @@
             txtRecipient.Margin = new Padding(4);
             txtRecipient.Multiline = true;
             txtRecipient.Name = "txtRecipient";
-            txtRecipient.PlaceholderText = "tin nhắn riêng tư";
+            txtRecipient.PlaceholderText = "Nhập tên người cần gửi riêng tư,...";
             txtRecipient.Size = new Size(294, 31);
             txtRecipient.TabIndex = 7;
             // 
@@ -172,7 +175,7 @@
             btnPrivateMessage.ForeColor = Color.Red;
             btnPrivateMessage.Image = (Image)resources.GetObject("btnPrivateMessage.Image");
             btnPrivateMessage.ImageAlign = ContentAlignment.MiddleLeft;
-            btnPrivateMessage.Location = new Point(374, 428);
+            btnPrivateMessage.Location = new Point(422, 428);
             btnPrivateMessage.Margin = new Padding(4);
             btnPrivateMessage.Name = "btnPrivateMessage";
             btnPrivateMessage.Size = new Size(157, 64);
@@ -190,7 +193,7 @@
             btnSend.ForeColor = Color.Red;
             btnSend.Image = (Image)resources.GetObject("btnSend.Image");
             btnSend.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSend.Location = new Point(158, 428);
+            btnSend.Location = new Point(250, 428);
             btnSend.Margin = new Padding(4);
             btnSend.Name = "btnSend";
             btnSend.Size = new Size(130, 64);
@@ -206,12 +209,12 @@
             label1.BackColor = Color.FromArgb(255, 192, 255);
             label1.BorderStyle = BorderStyle.FixedSingle;
             label1.ForeColor = Color.FromArgb(0, 0, 192);
-            label1.Location = new Point(26, 283);
+            label1.Location = new Point(112, 285);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(177, 25);
+            label1.Size = new Size(81, 25);
             label1.TabIndex = 11;
-            label1.Text = "Nhập tin nhắn nhóm";
+            label1.Text = "Messessr";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label2
@@ -260,12 +263,47 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
+            // btnAddToGroup
+            // 
+            btnAddToGroup.Font = new Font("Segoe UI Black", 10.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            btnAddToGroup.ForeColor = Color.Red;
+            btnAddToGroup.Location = new Point(69, 428);
+            btnAddToGroup.Name = "btnAddToGroup";
+            btnAddToGroup.Size = new Size(124, 64);
+            btnAddToGroup.TabIndex = 24;
+            btnAddToGroup.Text = "Thêm";
+            btnAddToGroup.UseVisualStyleBackColor = true;
+            btnAddToGroup.Click += btnAddToGroup_Click;
+            // 
+            // btnCreateGroup
+            // 
+            btnCreateGroup.BackColor = Color.FromArgb(128, 255, 128);
+            btnCreateGroup.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            btnCreateGroup.Location = new Point(48, 66);
+            btnCreateGroup.Name = "btnCreateGroup";
+            btnCreateGroup.Size = new Size(91, 34);
+            btnCreateGroup.TabIndex = 25;
+            btnCreateGroup.Text = "Tạo nhóm";
+            btnCreateGroup.UseVisualStyleBackColor = false;
+            btnCreateGroup.Click += btnCreateGroup_Click;
+            // 
+            // txtGroupName
+            // 
+            txtGroupName.Location = new Point(147, 66);
+            txtGroupName.Multiline = true;
+            txtGroupName.Name = "txtGroupName";
+            txtGroupName.Size = new Size(180, 34);
+            txtGroupName.TabIndex = 26;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(1000, 518);
+            Controls.Add(txtGroupName);
+            Controls.Add(btnCreateGroup);
+            Controls.Add(btnAddToGroup);
             Controls.Add(button1);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
@@ -312,5 +350,8 @@
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private Button button1;
+        private Button btnAddToGroup;
+        private Button btnCreateGroup;
+        private TextBox txtGroupName;
     }
 }

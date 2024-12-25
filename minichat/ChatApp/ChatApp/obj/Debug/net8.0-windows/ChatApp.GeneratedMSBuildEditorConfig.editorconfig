@@ -14,6 +14,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ChatApp
-build_property.ProjectDir = D:\minichat\ChatApp\ChatApp\
+build_property.ProjectDir = D:\Mini_Chat\minichat-winform\minichat\ChatApp\ChatApp\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

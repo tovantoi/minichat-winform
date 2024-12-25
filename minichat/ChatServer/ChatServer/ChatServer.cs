@@ -6,6 +6,7 @@ public class ChatServer
 {
     private TcpListener _server;
     private List<(TcpClient Client, string Username)> _clients = new List<(TcpClient, string)>();
+    private Dictionary<string, List<string>> _groups = new Dictionary<string, List<string>>();
 
     private Dictionary<string, User> _users = new Dictionary<string, User>
     {
@@ -32,67 +33,166 @@ public class ChatServer
         }
     }
 
-    private void HandleClient(TcpClient client)
+  private void HandleClient(TcpClient client)
+{
+    var stream = client.GetStream();
+    byte[] buffer = new byte[1024];
+
+    int bytesRead = stream.Read(buffer, 0, buffer.Length);
+    string loginInfo = Encoding.UTF8.GetString(buffer, 0, bytesRead);
+    string[] loginParts = loginInfo.Split(':');
+
+    if (loginParts.Length != 2)
     {
-        var stream = client.GetStream();
-        byte[] buffer = new byte[1024];
+        SendToClient(stream, "Đăng nhập thất bại!");
+        client.Close();
+        return;
+    }
 
-        int bytesRead = stream.Read(buffer, 0, buffer.Length);
-        string loginInfo = Encoding.UTF8.GetString(buffer, 0, bytesRead);
-        string[] loginParts = loginInfo.Split(':');
+    string username = loginParts[0];
+    string password = loginParts[1];
 
-        if (loginParts.Length != 2)
+    if (_users.TryGetValue(username, out User user) && user.Password == password)
+    {
+        SendToClient(stream, "Login successful!");
+
+        _clients.Add((client, username));
+        Console.WriteLine($"{username} đã tham gia trò chuyện.");
+        BroadcastMessage($"{username} đã tham gia trò chuyện.", username);
+
+        while ((bytesRead = stream.Read(buffer, 0, buffer.Length)) != 0)
         {
-            byte[] failMessage = Encoding.UTF8.GetBytes("Đăng nhập thất bại!");
-            stream.Write(failMessage, 0, failMessage.Length);
-            client.Close();
-            return;
+            string message = Encoding.UTF8.GetString(buffer, 0, bytesRead);
+
+            if (message.StartsWith("/create-group"))
+            {
+                HandleCreateGroup(message, username, stream);
+            }
+            else if (message.StartsWith("/add-to-group"))
+            {
+                HandleAddToGroup(message, username, stream);
+            }
+            else if (message.StartsWith("/group-msg"))
+            {
+                HandleGroupMessage(message, username);
+            }
+            else if (message.StartsWith("/private"))
+            {
+                HandlePrivateMessage(message, username);
+            }
+            else
+            {
+                BroadcastMessage($"{username}: {message}", username);
+            }
         }
 
-        string username = loginParts[0];
-        string password = loginParts[1];
+        _clients.RemoveAll(c => c.Client == client);
+        Console.WriteLine($"{username} đã thoát.");
+        BroadcastMessage($"{username} đã thoát.", username);
+        client.Close();
+    }
+    else
+    {
+        SendToClient(stream, "Đăng nhập thất bại!");
+        client.Close();
+    }
+}
 
-        if (_users.TryGetValue(username, out User user) && user.Password == password)
+private void HandleCreateGroup(string message, string username, NetworkStream stream)
+{
+    string[] parts = message.Split(' ');
+    if (parts.Length >= 2)
+    {
+        string groupName = parts[1];
+        if (!_groups.ContainsKey(groupName))
         {
-            // Gửi thông báo đăng nhập thành công
-            byte[] successMessage = Encoding.UTF8.GetBytes("Login successful!");
-            stream.Write(successMessage, 0, successMessage.Length);
-
-            _clients.Add((client, username));
-            Console.WriteLine($"{username} đã tham gia trò chuyện.");
-            BroadcastMessage($"{username} đã tham gia trò chuyện.", username);
-
-            while ((bytesRead = stream.Read(buffer, 0, buffer.Length)) != 0)
-            {
-                string message = Encoding.UTF8.GetString(buffer, 0, bytesRead);
-
-                if (message.StartsWith("/private"))
-                {
-                    string[] messageParts = message.Split(' ', 3);
-                    if (messageParts.Length >= 3)
-                    {
-                        string recipient = messageParts[1];
-                        string privateMessage = messageParts[2];
-                        SendPrivateMessage($"{username} (Private): {privateMessage}", recipient);
-                    }
-                }
-                else
-                {
-                    BroadcastMessage($"{username}: {message}", username);
-                }
-            }
-
-            _clients.RemoveAll(c => c.Client == client);
-            Console.WriteLine($"{username} đã thoát.");
-            BroadcastMessage($"{username} đã thoát.", username);
-            client.Close();
+            _groups[groupName] = new List<string> { username };
+            SendToClient(stream, $"Group '{groupName}' created and you have been added.");
         }
         else
         {
-            byte[] failMessage = Encoding.UTF8.GetBytes("Đăng nhập thất bại!");
-            stream.Write(failMessage, 0, failMessage.Length);
-            client.Close();
+            SendToClient(stream, $"Group '{groupName}' already exists.");
         }
+    }
+}
+
+private void HandleAddToGroup(string message, string username, NetworkStream stream)
+{
+    string[] parts = message.Split(' ');
+    if (parts.Length >= 3)
+    {
+        string groupName = parts[1];
+        string userToAdd = parts[2];
+
+        if (_groups.ContainsKey(groupName) && _clients.Exists(c => c.Username == userToAdd))
+        {
+            if (!_groups[groupName].Contains(userToAdd))
+            {
+                _groups[groupName].Add(userToAdd);
+                SendToClient(stream, $"{userToAdd} has been added to group '{groupName}'.");
+            }
+            else
+            {
+                SendToClient(stream, $"{userToAdd} is already in group '{groupName}'.");
+            }
+        }
+        else
+        {
+            SendToClient(stream, $"Group '{groupName}' does not exist or user '{userToAdd}' not found.");
+        }
+    }
+}
+
+    private void HandleGroupMessage(string message, string username)
+    {
+        string[] parts = message.Split(' ', 3);
+        if (parts.Length >= 3)
+        {
+            string groupName = parts[1];
+            string groupMessage = parts[2];
+
+            // Kiểm tra xem nhóm có tồn tại và người gửi có trong nhóm
+            if (_groups.ContainsKey(groupName) && _groups[groupName].Contains(username))
+            {
+                foreach (var member in _groups[groupName])
+                {
+                    var recipient = _clients.Find(c => c.Username == member);
+                    if (recipient.Client != null && recipient.Username != username) // Không gửi lại cho người gửi
+                    {
+                        SendToClient(recipient.Client.GetStream(), $"[{groupName}] {username}: {groupMessage}");
+                    }
+                }
+            }
+            else
+            {
+                // Nếu nhóm không tồn tại hoặc người gửi không thuộc nhóm, bỏ qua
+                Console.WriteLine($"Người dùng {username} không có quyền gửi tin nhắn tới nhóm '{groupName}'");
+            }
+        }
+    }
+
+
+    private void HandlePrivateMessage(string message, string username)
+{
+    string[] parts = message.Split(' ', 3);
+    if (parts.Length >= 3)
+    {
+        string recipientName = parts[1];
+        string privateMessage = parts[2];
+
+        var recipient = _clients.Find(c => c.Username == recipientName);
+        if (recipient.Client != null)
+        {
+            SendToClient(recipient.Client.GetStream(), $"(Private) {username}: {privateMessage}");
+        }
+    }
+}
+
+
+    private void SendToClient(NetworkStream stream, string message)
+    {
+        byte[] buffer = Encoding.UTF8.GetBytes(message);
+        stream.Write(buffer, 0, buffer.Length);
     }
     private void BroadcastMessage(string message, string senderUsername)
     {

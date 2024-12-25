@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tiFJLDCS6EOxq3STo4/3d+HmUwhidZr53NnWGYzNJB2s90kAXBIT8PPr4Xqqq8Eqo5hjQYD0XeRpyxPvzJcNhw==",
+  "dgSpecHash": "SuHKK61fVG34UzHUehVZ3aBCClS4wlfsRWA0houeZx5I+3GXDcBuBoScWQEhC79mTpxC9Z2CTRwVoFci6OR4bA==",
   "success": true,
-  "projectFilePath": "D:\\minichat\\ChatServer\\ChatServer\\ChatServer.csproj",
+  "projectFilePath": "D:\\Mini_Chat\\minichat-winform\\minichat\\ChatServer\\ChatServer\\ChatServer.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
