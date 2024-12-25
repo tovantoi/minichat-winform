@@ -1,0 +1,77 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\minichat\\ChatServer\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{349983C8-0EC5-4FC6-BFD2-FF07A2F543C3}|ChatServer\\ChatServer.csproj|d:\\minichat\\chatserver\\chatserver\\chatserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{349983C8-0EC5-4FC6-BFD2-FF07A2F543C3}|ChatServer\\ChatServer.csproj|solutionrelative:chatserver\\chatserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{349983C8-0EC5-4FC6-BFD2-FF07A2F543C3}|ChatServer\\ChatServer.csproj|D:\\minichat\\ChatServer\\chatserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{349983C8-0EC5-4FC6-BFD2-FF07A2F543C3}|ChatServer\\ChatServer.csproj|solutionrelative:chatserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{349983C8-0EC5-4FC6-BFD2-FF07A2F543C3}|ChatServer\\ChatServer.csproj|D:\\minichat\\ChatServer\\chatserver\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{349983C8-0EC5-4FC6-BFD2-FF07A2F543C3}|ChatServer\\ChatServer.csproj|solutionrelative:chatserver\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ChatServer.cs",
+              "DocumentMoniker": "D:\\minichat\\ChatServer\\ChatServer\\ChatServer.cs",
+              "RelativeDocumentMoniker": "ChatServer\\ChatServer.cs",
+              "ToolTip": "D:\\minichat\\ChatServer\\ChatServer\\ChatServer.cs",
+              "RelativeToolTip": "ChatServer\\ChatServer.cs",
+              "ViewState": "AQIAACwAAAAAAAAAAAAhwEAAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-31T06:57:39.667Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\minichat\\ChatServer\\ChatServer\\User.cs",
+              "RelativeDocumentMoniker": "ChatServer\\User.cs",
+              "ToolTip": "D:\\minichat\\ChatServer\\ChatServer\\User.cs",
+              "RelativeToolTip": "ChatServer\\User.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-31T06:56:50.215Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\minichat\\ChatServer\\ChatServer\\Program.cs",
+              "RelativeDocumentMoniker": "ChatServer\\Program.cs",
+              "ToolTip": "D:\\minichat\\ChatServer\\ChatServer\\Program.cs",
+              "RelativeToolTip": "ChatServer\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-31T06:56:15.353Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+D:\minichat\ChatServer\ChatServer\bin\Debug\net8.0\ChatServer.exe
+D:\minichat\ChatServer\ChatServer\bin\Debug\net8.0\ChatServer.deps.json
+D:\minichat\ChatServer\ChatServer\bin\Debug\net8.0\ChatServer.runtimeconfig.json
+D:\minichat\ChatServer\ChatServer\bin\Debug\net8.0\ChatServer.dll
+D:\minichat\ChatServer\ChatServer\bin\Debug\net8.0\ChatServer.pdb
+D:\minichat\ChatServer\ChatServer\obj\Debug\net8.0\ChatServer.GeneratedMSBuildEditorConfig.editorconfig
+D:\minichat\ChatServer\ChatServer\obj\Debug\net8.0\ChatServer.AssemblyInfoInputs.cache
+D:\minichat\ChatServer\ChatServer\obj\Debug\net8.0\ChatServer.AssemblyInfo.cs
+D:\minichat\ChatServer\ChatServer\obj\Debug\net8.0\ChatServer.csproj.CoreCompileInputs.cache
+D:\minichat\ChatServer\ChatServer\obj\Debug\net8.0\ChatServer.sourcelink.json
+D:\minichat\ChatServer\ChatServer\obj\Debug\net8.0\ChatServer.dll
+D:\minichat\ChatServer\ChatServer\obj\Debug\net8.0\refint\ChatServer.dll
+D:\minichat\ChatServer\ChatServer\obj\Debug\net8.0\ChatServer.pdb
+D:\minichat\ChatServer\ChatServer\obj\Debug\net8.0\ChatServer.genruntimeconfig.cache
+D:\minichat\ChatServer\ChatServer\obj\Debug\net8.0\ref\ChatServer.dll
