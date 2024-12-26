@@ -48,15 +48,22 @@
             btnAddToGroup = new Button();
             btnCreateGroup = new Button();
             txtGroupName = new TextBox();
+            pictureBox3 = new PictureBox();
+            pictureBox4 = new PictureBox();
+            pictureBox5 = new PictureBox();
+            dateTimePicker1 = new DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             SuspendLayout();
             // 
             // txtUsername
             // 
             txtUsername.BackColor = Color.White;
             txtUsername.Cursor = Cursors.IBeam;
-            txtUsername.Location = new Point(147, 137);
+            txtUsername.Location = new Point(147, 59);
             txtUsername.Margin = new Padding(4);
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(180, 30);
@@ -66,7 +73,7 @@
             // txtPassword
             // 
             txtPassword.Cursor = Cursors.IBeam;
-            txtPassword.Location = new Point(147, 185);
+            txtPassword.Location = new Point(147, 112);
             txtPassword.Margin = new Padding(4);
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
@@ -76,7 +83,7 @@
             // txtMessage
             // 
             txtMessage.Cursor = Cursors.IBeam;
-            txtMessage.Location = new Point(250, 280);
+            txtMessage.Location = new Point(218, 265);
             txtMessage.Margin = new Padding(4);
             txtMessage.Name = "txtMessage";
             txtMessage.PlaceholderText = "Nhập tin nhắn....";
@@ -89,7 +96,7 @@
             lblUsername.BackColor = Color.FromArgb(128, 255, 128);
             lblUsername.BorderStyle = BorderStyle.Fixed3D;
             lblUsername.ImageAlign = ContentAlignment.MiddleLeft;
-            lblUsername.Location = new Point(48, 137);
+            lblUsername.Location = new Point(44, 59);
             lblUsername.Margin = new Padding(4, 0, 4, 0);
             lblUsername.Name = "lblUsername";
             lblUsername.Size = new Size(91, 25);
@@ -103,7 +110,7 @@
             lblRecipient.BackColor = Color.FromArgb(255, 192, 255);
             lblRecipient.BorderStyle = BorderStyle.FixedSingle;
             lblRecipient.ForeColor = Color.Blue;
-            lblRecipient.Location = new Point(112, 344);
+            lblRecipient.Location = new Point(75, 324);
             lblRecipient.Margin = new Padding(4, 0, 4, 0);
             lblRecipient.Name = "lblRecipient";
             lblRecipient.Size = new Size(91, 25);
@@ -116,7 +123,7 @@
             lblPassword.AutoSize = true;
             lblPassword.BackColor = Color.FromArgb(128, 255, 128);
             lblPassword.BorderStyle = BorderStyle.Fixed3D;
-            lblPassword.Location = new Point(48, 188);
+            lblPassword.Location = new Point(44, 112);
             lblPassword.Margin = new Padding(4, 0, 4, 0);
             lblPassword.Name = "lblPassword";
             lblPassword.Size = new Size(87, 25);
@@ -129,7 +136,7 @@
             rtbChat.BackColor = Color.FromArgb(192, 255, 255);
             rtbChat.Cursor = Cursors.No;
             rtbChat.ForeColor = Color.FromArgb(0, 0, 192);
-            rtbChat.Location = new Point(597, 102);
+            rtbChat.Location = new Point(597, 59);
             rtbChat.Margin = new Padding(4);
             rtbChat.Name = "rtbChat";
             rtbChat.ReadOnly = true;
@@ -141,7 +148,7 @@
             // txtRecipient
             // 
             txtRecipient.Cursor = Cursors.IBeam;
-            txtRecipient.Location = new Point(250, 344);
+            txtRecipient.Location = new Point(218, 318);
             txtRecipient.Margin = new Padding(4);
             txtRecipient.Multiline = true;
             txtRecipient.Name = "txtRecipient";
@@ -157,7 +164,7 @@
             btnLogin.ForeColor = Color.FromArgb(0, 192, 0);
             btnLogin.Image = (Image)resources.GetObject("btnLogin.Image");
             btnLogin.ImageAlign = ContentAlignment.MiddleLeft;
-            btnLogin.Location = new Point(401, 152);
+            btnLogin.Location = new Point(376, 92);
             btnLogin.Margin = new Padding(4);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(168, 58);
@@ -175,7 +182,7 @@
             btnPrivateMessage.ForeColor = Color.Red;
             btnPrivateMessage.Image = (Image)resources.GetObject("btnPrivateMessage.Image");
             btnPrivateMessage.ImageAlign = ContentAlignment.MiddleLeft;
-            btnPrivateMessage.Location = new Point(422, 428);
+            btnPrivateMessage.Location = new Point(597, 428);
             btnPrivateMessage.Margin = new Padding(4);
             btnPrivateMessage.Name = "btnPrivateMessage";
             btnPrivateMessage.Size = new Size(157, 64);
@@ -193,7 +200,7 @@
             btnSend.ForeColor = Color.Red;
             btnSend.Image = (Image)resources.GetObject("btnSend.Image");
             btnSend.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSend.Location = new Point(250, 428);
+            btnSend.Location = new Point(328, 428);
             btnSend.Margin = new Padding(4);
             btnSend.Name = "btnSend";
             btnSend.Size = new Size(130, 64);
@@ -209,12 +216,12 @@
             label1.BackColor = Color.FromArgb(255, 192, 255);
             label1.BorderStyle = BorderStyle.FixedSingle;
             label1.ForeColor = Color.FromArgb(0, 0, 192);
-            label1.Location = new Point(112, 285);
+            label1.Location = new Point(75, 270);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(81, 25);
+            label1.Size = new Size(80, 25);
             label1.TabIndex = 11;
-            label1.Text = "Messessr";
+            label1.Text = "Message";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label2
@@ -222,7 +229,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Showcard Gothic", 22.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(192, 0, 192);
-            label2.Location = new Point(412, 31);
+            label2.Location = new Point(392, 9);
             label2.Name = "label2";
             label2.Size = new Size(280, 46);
             label2.TabIndex = 20;
@@ -235,7 +242,7 @@
             pictureBox1.BackgroundImageLayout = ImageLayout.Center;
             pictureBox1.BorderStyle = BorderStyle.Fixed3D;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(14, 141);
+            pictureBox1.Location = new Point(12, 61);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(28, 28);
             pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -244,8 +251,9 @@
             // 
             // pictureBox2
             // 
+            pictureBox2.BackColor = Color.White;
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(17, 184);
+            pictureBox2.Location = new Point(12, 111);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(28, 26);
             pictureBox2.TabIndex = 22;
@@ -256,7 +264,7 @@
             button1.BackColor = Color.FromArgb(192, 255, 255);
             button1.Cursor = Cursors.Hand;
             button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.Location = new Point(280, 186);
+            button1.Location = new Point(280, 112);
             button1.Name = "button1";
             button1.Size = new Size(47, 29);
             button1.TabIndex = 23;
@@ -267,11 +275,13 @@
             // 
             btnAddToGroup.Font = new Font("Segoe UI Black", 10.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             btnAddToGroup.ForeColor = Color.Red;
-            btnAddToGroup.Location = new Point(69, 428);
+            btnAddToGroup.Image = (Image)resources.GetObject("btnAddToGroup.Image");
+            btnAddToGroup.ImageAlign = ContentAlignment.MiddleLeft;
+            btnAddToGroup.Location = new Point(91, 428);
             btnAddToGroup.Name = "btnAddToGroup";
-            btnAddToGroup.Size = new Size(124, 64);
+            btnAddToGroup.Size = new Size(129, 64);
             btnAddToGroup.TabIndex = 24;
-            btnAddToGroup.Text = "Thêm";
+            btnAddToGroup.Text = "   Thêm";
             btnAddToGroup.UseVisualStyleBackColor = true;
             btnAddToGroup.Click += btnAddToGroup_Click;
             // 
@@ -279,7 +289,7 @@
             // 
             btnCreateGroup.BackColor = Color.FromArgb(128, 255, 128);
             btnCreateGroup.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            btnCreateGroup.Location = new Point(48, 66);
+            btnCreateGroup.Location = new Point(40, 184);
             btnCreateGroup.Name = "btnCreateGroup";
             btnCreateGroup.Size = new Size(91, 34);
             btnCreateGroup.TabIndex = 25;
@@ -289,11 +299,53 @@
             // 
             // txtGroupName
             // 
-            txtGroupName.Location = new Point(147, 66);
+            txtGroupName.Cursor = Cursors.IBeam;
+            txtGroupName.Location = new Point(147, 184);
             txtGroupName.Multiline = true;
             txtGroupName.Name = "txtGroupName";
             txtGroupName.Size = new Size(180, 34);
             txtGroupName.TabIndex = 26;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.BackColor = Color.White;
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(10, 184);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(30, 34);
+            pictureBox3.TabIndex = 27;
+            pictureBox3.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.Location = new Point(40, 270);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(28, 25);
+            pictureBox4.TabIndex = 28;
+            pictureBox4.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
+            pictureBox5.Location = new Point(40, 324);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(28, 25);
+            pictureBox5.TabIndex = 29;
+            pictureBox5.TabStop = false;
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.CalendarFont = new Font("Showcard Gothic", 10.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            dateTimePicker1.CalendarMonthBackground = Color.FromArgb(128, 255, 255);
+            dateTimePicker1.Cursor = Cursors.No;
+            dateTimePicker1.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            dateTimePicker1.Format = DateTimePickerFormat.Short;
+            dateTimePicker1.Location = new Point(863, 61);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(125, 30);
+            dateTimePicker1.TabIndex = 30;
+            dateTimePicker1.UseWaitCursor = true;
             // 
             // Form1
             // 
@@ -301,6 +353,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(1000, 518);
+            Controls.Add(dateTimePicker1);
+            Controls.Add(pictureBox5);
+            Controls.Add(pictureBox4);
+            Controls.Add(pictureBox3);
             Controls.Add(txtGroupName);
             Controls.Add(btnCreateGroup);
             Controls.Add(btnAddToGroup);
@@ -328,6 +384,9 @@
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -353,5 +412,9 @@
         private Button btnAddToGroup;
         private Button btnCreateGroup;
         private TextBox txtGroupName;
+        private PictureBox pictureBox3;
+        private PictureBox pictureBox4;
+        private PictureBox pictureBox5;
+        private DateTimePicker dateTimePicker1;
     }
 }
